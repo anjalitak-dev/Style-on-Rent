@@ -1,0 +1,274 @@
+<html>
+ <head>
+  <title>
+   Style On Rent
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Elephant&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Brush Script MT', cursive;
+            background-color: #000;
+            color: #d2b48c;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .left, .right {
+            flex: 1;
+            height: 100%;
+        }
+        .left {
+            background: url('https://i.pinimg.com/736x/3a/1a/09/3a1a096dd2d99a63d28f453efd8df574.jpg') no-repeat center center;
+            background-size: cover;
+            margin-right: 200px;
+        }
+        .right {
+            background: url('images/image2-OnyIJ1Ijo-transformed.jpeg') no-repeat center center;
+            background-size: cover;
+            margin-left: 200px;
+        }
+        .center {
+            position: absolute;
+            text-align: center;
+        }
+        .center h1 {
+            font-size: 5em;
+            margin: 0;
+        }
+        .center p {
+            font-family: 'Elephant', sans-serif;
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .logo img {
+            width: 90px;
+        }
+        .icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .icons button {
+            background: none;
+            border: none;
+            color: #d2b48c;
+            font-size: 1.5em;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .gender-section {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 50px 0;
+            padding: 20px;
+        }
+        .gender-section div {
+            text-align: center;
+        }
+        .gender-section img {
+            width: auto ;
+            height: 400px;
+            border-radius: 20px;
+        }
+        .gender-section h2 {
+            margin-top: 10px;
+            font-family: 'Elephant', sans-serif;
+            font-size: 2em;
+        }
+        /* Footer Styling */
+        .footer {
+            background-color: #222;
+            color: #d2b48c;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+            font-family: Arial, sans-serif; /* Changed font to Arial */
+            font-size: 20px; /* Increased font size */
+        }
+        .footer .footer-links {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .footer .footer-links div {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .footer .footer-links a {
+            color: #d2b48c;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .footer .social-icons i {
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        /* Products Section */
+        .products {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            padding: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .product {
+            text-align: center;
+            background-color:black;
+            border-radius: 15px;
+            padding: 15px;
+            color: #d2b48c;
+            width: 200px;
+        }
+        .product img {
+            width: 250px;
+            height: 400px ;
+            border-radius: 10px;
+        }
+        .product .price {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+       .gender-section button{
+            background-color: black
+            ;
+            border:none;
+       
+        }
+        .footer .fa-whatsapp {
+            color: #25D366;
+        }
+        .footer .fa-facebook {
+            color: #3b5998;
+        }
+        .footer .fa-instagram {
+            color: #E1306C;
+        }
+        .footer .fa-twitter {
+            color: #1DA1F2;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="left">
+   </div>
+   <div class="right">
+   </div>
+   <div class="center">
+    <h1>
+     Style On Rent
+    </h1>
+    <p>
+     RENT . ROCK . REPEAT
+    </p>
+   </div>
+   <div class="logo">
+    <img alt="Logo" height="90" src="https://img.freepik.com/premium-vector/letter-sr-luxury-royal-golden-gold-logo-concept-design-premium_161195-43.jpg?w=360" width="70"/>
+   </div>
+   <div class="icons">
+    <button type="button" onclick="login()">
+     <i class="fas fa-user-circle">
+     </i>
+    </button>
+    <button type="button">
+     <i class="fas fa-search">
+     </i>
+    </button>
+    <button type="button" onclick="cart()">
+     <i class="fas fa-shopping-bag">
+     </i>
+    </button>
+   </div>
+  </div>
+
+  <!-- For Her Section -->
+  <div class="gender-section">
+    <div>
+      <button type="button" onclick="forher()"><img alt="For Her" src="images/forher.jpeg" /></button>
+      <h2>For Her</h2>
+    </div>
+    <div>
+        <button type="button" onclick="forhim()"> <img alt="For Him" src="images/forhim.jpg" /></button>
+
+      <h2>For Him</h2>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <div class="products">
+    <div class="product">
+      <img src="https://cdn.shopify.com/s/files/1/0412/0002/5751/files/3_600x600.webp?v=1692431827" alt="Product 1" />
+      <h3>Red Wine Lehenga </h3>
+      <div class="price">Rent: Rs.3000</div>
+    </div>
+    <div class="product">
+      <img src="https://i.pinimg.com/originals/88/9c/52/889c5200f56c9ed8a5fd8193e43f68cd.jpg" alt="Product 2" />
+      <h3>Paithani Saree</h3>
+      <div class="price">Rent: Rs.1500</div>
+    </div>
+    <div class="product">
+      <img src="https://cdn0.weddingwire.in/articles/images/3/0/5/2/img_62503/latest-designer-indo-western-dresses-mishruofficial-dhoti.jpg" alt="Product 3" />
+      <h3>Indo - Western wear  </h3>
+      <div class="price">Rent: Rs.1000</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-links">
+        <div>
+            <h3>About Us</h3>
+            <a href="#">Our Story</a>
+            <a href="#">Careers</a>
+        </div>
+        <div>
+            <h3>Customer Service</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div>
+            <h3>Quick Shop</h3>
+            <a href="#">Women
+             <a href="#"" > Men</a>
+              
+            <a href="#">Acessories</a>
+            <a href="#">Lehengas</a>
+            <a href="#">Kurtas</a>
+        </div>
+    </div>
+    <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <p>&copy; 2024 Style On Rent. All rights reserved.</p>
+  </div>
+
+  <script>
+    function login(){
+        window.location.href="login1.1.html";
+        console.log("Login button is clicked....")
+    }
+    function forher(){
+        window.location.href="forher1.1.html"
+    }
+    function forhim(){
+        window.location.href="forhim1.1.html"
+    }
+  </script>
+ </body>
+</html>

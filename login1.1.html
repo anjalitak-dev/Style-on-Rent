@@ -1,0 +1,262 @@
+<html>
+<head>
+    <title>Rent Clothing - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #d2a679;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .header img {
+            width: 90px;
+        }
+        .header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .header .nav-links button {
+            color: #d2a679;
+            padding: 10px 40px; /* Adjusted padding */
+            border: 3px solid #d2a679;
+            border-radius: 30px;
+            background-color: black;
+            font-size: 1em;
+            cursor: pointer;
+            transition: color 0.3s, background-color 0.3s; /* Smooth transitions */
+            position: relative; /* Added for positioning caret */
+        }
+        .header .nav-links button:hover {
+            background-color: #d2a679;
+            color: black;
+        }
+        
+        .header .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .header .icons i {
+            color: #d2a679;
+            font-size: 25px;
+        }
+        /* Navigation dropdown styles */
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            color: #d2b48c; /* Change color on hover */
+        }
+        /* Dropdown styles */
+        .dropdown-content {
+            color:white;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 130%; /* Positioning directly below the nav item */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 1;
+            display: flex;
+            gap: 40px;
+            width: 780px; /* Fixed width for dropdown */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .nav-item:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown-content .column h2 {
+            color: #d2b48c;
+        }
+        .dropdown-content .column p {
+            color: #fff;
+        }
+        .dropdown-content .column p:hover {
+            color: #d2b48c;
+            cursor: pointer;
+        }
+        .nav-item .fa-caret-down {
+            display: none; /* Hide caret by default */
+            position: absolute; /* Position it inside the button */
+            right: 10px; /* Adjust as needed */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for perfect centering */
+        }
+        .nav-item:hover .fa-caret-down {
+            display: inline; /* Show caret on hover */
+            color: black;
+        }
+        .login-container {
+            margin-top: 50px;
+        }
+        .login-container h1 {
+            font-size: 36px;
+        }
+        .login-container input {
+            width: 20%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #d2a679;
+            border-radius: 15px;
+            background-color: #000;
+            color: #d2a679;
+            font-size: 18px;
+        }
+        .login-container .forgot-password {
+            color: #d2a679;
+            font-size: 14px;
+            text-align: left;
+            width: 20%;
+            margin: 0 auto;
+        }
+        .login-container button {
+            width: 20%;
+            padding: 15px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 15px;
+            background-color: #d2a679;
+            color: #000;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .login-container .create-account {
+            font-size: 18px;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .footer i {
+            font-size: 30px;
+        }
+        .footer .fa-whatsapp {
+            color: #25D366;
+        }
+        .footer .fa-facebook {
+            color: #3b5998;
+        }
+        .footer .fa-instagram {
+            color: #E1306C;
+        }
+        .footer .fa-twitter {
+            color: #1DA1F2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img alt="Brand Logo" height="90" src="https://img.freepik.com/premium-vector/letter-sr-luxury-royal-golden-gold-logo-concept-design-premium_161195-43.jpg?w=360" width="50"/>
+        <div class="nav-links">
+            <div class="nav-item"> 
+                <button type="button" onclick="forherpage()">Womenswear</button>
+                <i class="fas fa-caret-down"></i>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h2>RENT BY PRICE</h2>
+                        <p>Rent under 5k</p>
+                        <p>Rent under 10k</p>
+                        <p>Rent under 20k</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY CATEGORY</h2>
+                        <p>Lehengas</p>
+                        <p>Anarkali</p>
+                        <p>Sarees</p>
+                        <p>Gowns</p>
+                        <p>Sahara Set</p>
+                        <p>Jewellery</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY OCCASION</h2>
+                        <p>Sangeet</p>
+                        <p>Mehendi</p>
+                        <p>Weddings</p>
+                        <p>Pre-wedding</p>
+                        <p>Engagement</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button type="button" onclick="forhimpage()">Menswear</button>
+                <i class="fas fa-caret-down"></i>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h2>RENT BY PRICE</h2>
+                        <p>Rent under 5k</p>
+                        <p>Rent under 10k</p>
+                        <p>Rent under 20k</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY CATEGORY</h2>
+                        <p>Sherwani</p>
+                        <p>Suit</p>
+                        <p>Blazer</p>
+                        <p>Tuxedo</p>
+                        <p>Kurtas</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY OCCASION</h2>
+                        <p>Sangeet</p>
+                        <p>Mehendi</p>
+                        <p>Weddings</p>
+                        <p>Pre-wedding</p>
+                        <p>Engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </div>
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <input placeholder="Email/Mob no." type="text"/>
+        <br/>
+        <input placeholder="Password" type="password"/>
+        <div class="forgot-password">forgot password?</div>
+        <button type="submit" onclick="loginpage()">SIGN IN</button>
+        <div class="create-account">Create Account</div>
+    </div>
+    <div class="footer">
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+    </div>
+    <script>
+        function loginpage(){
+            window.location.href="index.html";
+            alert("Login Successful.....")
+        
+        }
+        function forherpage(){
+            window.location.href="forher1.1.html";
+        }
+        function forhimpage(){
+            window.location.href="forhim1.1.html";
+        }
+    </script>
+</body

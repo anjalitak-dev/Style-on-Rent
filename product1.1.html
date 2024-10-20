@@ -1,0 +1,315 @@
+<html>
+<head>
+    <title>Product Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e3cba8;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1a1a1a;
+            position: relative;
+        }
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-size: contain;
+            margin-right: 10px;
+        }
+        .nav {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav-item {
+            position: relative;
+            padding: 10px 20px;
+            border: 1px solid #e3cba8;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            background-color: #e3cba8;
+            color: #1a1a1a;
+        }
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-icons i {
+            font-size: 20px;
+            cursor: pointer;
+            color: #e3cba8;
+        }
+        /* Dropdown styles */
+        .dropdown-content {
+            color: beige;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 130%; /* Positioning directly below the nav item */
+            left: 30%;
+            transform: translateX(-50%);
+            background-color:#1a1a1a;
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1;
+            display: flex;
+            gap: 100px;
+            width:900px; /* Fixed width for dropdown */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+        }
+        .nav-item:hover .dropdown-content,
+        .nav-item:focus .dropdown-content {
+            opacity: 1; /* Make visible */
+            visibility: visible; /* Make it appear */
+        }
+        .nav-item:hover button {
+         color: black; /* Change text color to black on hover */
+        background-color: #e3cba8; /* Set background color to the given color on hover */
+        }
+        .nav-item button{
+            background-color:#1a1a1a;
+            color:#e3cba8;
+            border: none;
+    }
+            .caret {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s; /* Smooth transition */
+            margin-left: 5px; /* Space between text and caret */
+        }
+        .nav-item:hover .caret {
+            opacity: 1; /* Show caret on hover */
+        }
+        .breadcrumb {
+            margin: 20px 0;
+        }
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        .product-details img {
+            max-width: px;
+            border-radius: 10px;
+        }
+        .product-info {
+            max-width: 45%;
+        }
+        .product-info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            margin: 5px;
+        }
+        .product-info select,
+        .product-info input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 6px;
+            border: 2px solid #e3cba8;
+            background-color: #1a1a1a;
+            color: #e3cba8;
+        }
+        .product-info button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: #e3cba8;
+            color: #1a1a1a;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .product-info button:hover {
+            background-color: #d1b08a;
+        }
+        .product-thumbnails {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .product-thumbnails div {
+            text-align: center;
+            margin-right: 10px;
+        }
+        .product-thumbnails img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-thumbnails p {
+            margin-top: 5px;
+        }
+        .start-date {
+            color: white;
+        }
+        .product-info input[type="date"] {
+            color: #f5f5dc; /* Beige color */
+        }
+
+        .nav-icons button{
+            background-color:1a1a1a ;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img alt="Logo" height="70" src="https://img.freepik.com/premium-vector/letter-sr-luxury-royal-golden-gold-logo-concept-design-premium_161195-43.jpg?w=360" width="90"/>
+            </div>
+            <div class="nav">
+                <div class="nav-item"><button type="button" onclick="womenswearpage()">Womenswear</button> 
+                    
+                    <i class="fas fa-caret-down"></i>
+                    <div class="dropdown-content">
+                        <div class="column">
+                            <h2>RENT BY PRICE</h2>
+                            <p>Rent under 5k</p>
+                            <p>Rent under 10k</p>
+                            <p>Rent under 20k</p>
+                        </div>
+                        <div class="column">
+                            <h2>RENT BY CATEGORY</h2>
+                            <p>Lehengas</p>
+                            <p>Anarkali</p>
+                            <p>Sarees</p>
+                            <p>Gowns</p>
+                            <p>Sahara Set</p>
+                            <p>Jewellery</p>
+                        </div>
+                        <div class="column">
+                            <h2>RENT BY OCCASION</h2>
+                            <p>Sangeet</p>
+                            <p>Mehendi</p>
+                            <p>Weddings</p>
+                            <p>Pre-wedding</p>
+                            <p>Engagement</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><button type="button" onclick="menswearpage()">Menswear</button> 
+                    <i class="fas fa-caret-down"></i>
+                    <div class="dropdown-content">
+                        <div class="column">
+                            <h2>RENT BY PRICE</h2>
+                            <p>Rent under 5k</p>
+                            <p>Rent under 10k</p>
+                            <p>Rent under 20k</p>
+                        </div>
+                        <div class="column">
+                            <h2>RENT BY CATEGORY</h2>
+                            <p>Sherwani</p>
+                            <p>Suit</p>
+                            <p>Blazer</p>
+                            <p>Tuxedo</p>
+                            <p>Kurtas</p>
+                        </div>
+                        <div class="column">
+                            <h2>RENT BY OCCASION</h2>
+                            <p>Sangeet</p>
+                            <p>Mehendi</p>
+                            <p>Weddings</p>
+                            <p>Pre-wedding</p>
+                            <p>Engagement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-icons">
+               <button type="button" onclick="login()"> <i class="fas fa-user"></button></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="#">Home</a> &gt; <a href="#">All products</a> &gt; Yellow and Pink multi colored set
+        </div>
+        <div class="product-details">
+            <div>
+                <img alt="Yellow and Pink multi colored anarkali set" height="600" src="images/yellow pink anarkali.jpg" width="500"/>
+                <div class="product-thumbnails">
+                    <div>
+                        <img alt="Front view of Yellow and Pink multi colored anarkali set" height="200" src="images/front.jpg" width="150"/>
+                        <p>Front view</p>
+                    </div>
+                    <div>
+                        <img alt="Side view of Yellow and Pink multi colored anarkali set" height="200" src="images/side.jpg" width="150"/>
+                        <p>Side view</p>
+                    </div>
+                    <div>
+                        <img alt="Back view of Yellow and Pink multi colored anarkali set" height="200" src="images/back.jpg" width="150"/>
+                        <p>Back view</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>Yellow and Pink multi colored anarkali set</h1>
+                <p>Rent: Rs 3,000</p>
+                <p>Refundable Deposit: Rs 3,000</p>
+                <label for="rental-duration">Rental Duration</label>
+                <select id="rental-duration">
+                 <option value="">Select duration</option>
+                 <option value="1-day">1 day</option>
+                 <option value="2-days">2 days</option>
+                 <option value="3-days">3 days</option>
+                 <option value="1-week">1 week</option>
+                 <option value="2-weeks">2 weeks</option>
+                </select>
+                <label for="size">Size</label>
+                <select id="size">
+                 <option value="">Select size</option>
+                 <option value="small">Small</option>
+                 <option value="medium">Medium</option>
+                 <option value="large">Large</option>
+                 <option value="x-large">X-Large</option>
+                </select>
+                <label for="start-date">Start date:</label>
+                
+                <input id="start-date" type="date" value="2023-10-01"/>
+                <label for="return-date">Return date:</label>
+                <input id="return-date" type="date" value="2023-10-07"  />
+                <a href="#" style="color: #e3cba8; text-decoration: underline;">See Size Chart</a>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function login(){
+            window.location.href="login1.1.html"
+        }
+        function  womenswearpage(){
+            window.location.href="forher1.1.html";
+        }
+        function menswearpage(){
+            window.location.href="forhim1.1.html";
+        }
+
+    </script>
+</body>
+</html>

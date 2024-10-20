@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Clothing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #d2b48c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: url('https://placehold.co/50x50') no-repeat center center;
+            background-size: contain;
+        }
+        .nav {
+            display: flex;
+            gap: 50px;
+        }
+        .nav-item {
+            position: relative;
+            padding: 10px 30px;
+            border: 3px solid #d2b48c;
+            border-radius: 30px;
+            cursor: pointer;
+          
+        }
+        .nav-item:hover {
+            background-color: #d2b48c;
+            color: beige;
+
+        }
+        .nav-item button{
+            background-color:black;
+            color: #d2b48c;
+            border:none;
+        }
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-icons i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            color: beige;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 130%; /* Positioning directly below the nav item */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color:black;
+            border-radius: 10px;
+            padding: 5px;
+            z-index: 1;
+            display: flex;
+            gap: 40px;
+            width: 780px; /* Fixed width for dropdown */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+        }
+        .nav-item:hover .dropdown-content,
+        .nav-item:focus .dropdown-content {
+            opacity: 1; /* Make visible */
+            visibility: visible; /* Make it appear */
+        }
+        .nav-item:hover button {
+         color: black; /* Change text color to black on hover */
+        background-color: #d2b48c; /* Set background color to the given color on hover */
+        }
+        /* Caret icon visibility */
+        .caret {
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s; /* Smooth transition */
+            margin-left: 5px; /* Space between text and caret */
+        }
+        .nav-item:hover .caret {
+            opacity: 1; /* Show caret on hover */
+            color: #000;
+        }
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+        .banner img {
+            width: 1000px;
+            height: auto;
+            padding: 5px 10px;
+            border-radius: 25px;
+        }
+        .banner .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-weight: bold;
+            color: #d3bfa7;
+        }
+        .content {
+            padding: 20px;
+        }
+        .breadcrumbs-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .filters {
+            display: flex;
+            gap: 40px;
+            color: white;
+        }
+        .filters select {
+            background-color: #000;
+            color: white;
+            border: 2px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .products {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 90px;
+        }
+        .product {
+            text-align: center;
+        }
+        .product img {
+            width: 350px;
+            height: 500px;
+            border-radius: 15px;
+        }
+        .product .title {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .product .price {
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+        .product button {
+            background-color: black;
+            border: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><img alt="Logo" height="90" src="https://img.freepik.com/premium-vector/letter-sr-luxury-royal-golden-gold-logo-concept-design-premium_161195-43.jpg?w=360" width="90"/></div>
+        <div class="nav">
+            <div class="nav-item"><button type="button" onclick="samepage()">Womenswear</button> 
+            <i class="fas fa-caret-down caret"></i>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h2>RENT BY PRICE</h2>
+                        <p>Rent under 5k</p>
+                        <p>Rent under 10k</p>
+                        <p>Rent under 20k</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY CATEGORY</h2>
+                        <p>Lehengas</p>
+                        <p>Anarkali</p>
+                        <p>Sarees</p>
+                        <p>Gowns</p>
+                        <p>Sahara Set</p>
+                        <p>Jewellery</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY OCCASION</h2>
+                        <p>Sangeet</p>
+                        <p>Mehendi</p>
+                        <p>Weddings</p>
+                        <p>Pre-wedding</p>
+                        <p>Engagement</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><button type="button" onclick="menswearpage()">Menswear</button> 
+                <i class="fas fa-caret-down caret"></i>
+                <div class="dropdown-content">
+                    <div class="column">
+                        <h2>RENT BY PRICE</h2>
+                        <p>Rent under 5k</p>
+                        <p>Rent under 10k</p>
+                        <p>Rent under 20k</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY CATEGORY</h2>
+                        <p>Sherwani</p>
+                        <p>Suit</p>
+                        <p>Blazer</p>
+                        <p>Tuxedo</p>
+                        <p>Kurtas</p>
+                    </div>
+                    <div class="column">
+                        <h2>RENT BY OCCASION</h2>
+                        <p>Sangeet</p>
+                        <p>Mehendi</p>
+                        <p>Weddings</p>
+                        <p>Pre-wedding</p>
+                        <p>Engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-icons">
+            <i class="fas fa-user" onclick="login()"></i>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-bag" onclick="cart()"></i>
+        </div>
+    </div>
+    <div class="banner">
+        <img alt="Group of girls wearing traditional and modern womenswear" src="images/forher.jpeg" />
+        <div class="text">FOR HER</div>
+    </div>
+    <div class="content">
+        <div class="breadcrumbs-filters">
+            <div class="breadcrumbs">Home &gt; Womenswear (All)</div>
+            <div class="filters">
+                <div style="text-align: right;">
+                    <label for="filter-products">Filter products:</label>
+                    <select id="filter-products">
+                        <option value="all">All</option>
+                        <option value="jackets">Sharara</option>
+                        <option value="sherwanis">Lehenga</option>
+                        <option value="kurtas">Gown</option>
+                    </select>
+                </div>
+                <div style="text-align: right;">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="all">All</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="product">
+                <button type="button" onclick="desc()">
+                    <img alt="Yellow pink anarkali" src="images/yellow pink anarkali.jpg" />
+                </button>
+                <div class="title">Yellow and Pink colored Anarkali set</div>
+                <div class="price">Rent: Rs.3000</div>
+            </div>
+            <div class="product">
+                <button type="button" onclick="desc()">
+                    <img alt="Black anarkali" src="images/navy blue.jpg" />
+                </button>
+                <div class="title">Navy Blue Gown</div>
+                <div class="price">Rent: Rs.3000</div>
+            </div>
+            <div class="product">
+                <button type="button" onclick="desc()">
+                    <img alt="Blue Anarkali" src="images/lehenga.jpg" />
+                </button>
+                <div class="title">Multi-Colored Lehenga</div>
+                <div class="price">Rent: Rs.4000</div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            window.location.href="login1.1.html";
+        }
+        function cart() {
+            alert("Cart functionality is not implemented yet.");
+        }
+        function desc() {
+            window.location.href="product1.1.html"
+        }
+        function samepage(){
+            window.location.href="forher1.1.html"
+        }
+        function menswearpage(){
+            window.location.href="forhim1.1.html"
+        }
+    </script>
+</body>
+</html>
